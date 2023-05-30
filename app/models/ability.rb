@@ -2,14 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Payment, public: true
-
-    return unless user.present? # additional permissions for logged in users (they can read their own Payments)
-
-    can :read, Payment, user_id: user.id
+    can :read, Category, Payment, user_id: user.id if user.author?
 
     return unless user.admin? # additional permissions for administrators
 
-    can :manage, Payment
+    can :manage, Payment, Category
   end
 end
