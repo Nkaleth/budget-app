@@ -72,5 +72,6 @@ group :test do
 end
 
 gem 'cssbundling-rails'
+gem 'devise'
 gem 'jsbundling-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'
