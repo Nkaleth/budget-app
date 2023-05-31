@@ -1,0 +1,20 @@
+<h1>New Category for <%=@current_user&.name%></h1>
+<%= form_with model: [@current_user, @category], html: { class: 'form-horizontal p-5 w-50' } do |form| %>
+  <div class="form-group">
+    <%= form.label :name, class: 'control-label col-sm-2' %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.label :icon, class: 'control-label col-sm-2' %>
+    <div class="col-sm-10">
+      <%= form.text_area :icon, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= form.submit class: 'btn btn-primary mt-4' %>
+    </div>
+  </div>
+<% end %>

@@ -8,4 +8,24 @@ class CategoriesController < ApplicationController
       { name: category.name, icon: category.icon, total: }
     end
   end
+
+  def new
+    @category = Category.new
+  end
+
+  def create
+    @category = Category.new(category_params.merge(author: current_user))
+
+    if @category.save
+      redirect_to user_categories_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def category_params
+    params.require(:category).permit(:name, :icon)
+  end
 end
