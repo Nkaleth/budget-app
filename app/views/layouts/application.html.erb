@@ -12,7 +12,9 @@
   </head>
 
   <body>
+    <% unless current_page?(controller: 'pages', action: 'home') %>
     <%= render "layouts/navbar" %>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
