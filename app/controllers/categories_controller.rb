@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
-    @categories = Category.includes(:payments).accessible_by(current_ability)
     @category_totals = @categories.map do |category|
       payments = category.payments
       total = payments.sum(:amount)
