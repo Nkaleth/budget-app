@@ -15,3 +15,14 @@ fourth_categ = Category.create!(name: 'Health', icon: 'https://drive.google.com/
 # Lilly Categories
 
 sixth_categ = Category.create!(name: 'Entertainment', icon: 'https://drive.google.com/uc?id=1hDAfXduhiyHl1Wa3jJMXoO5pAm2y25N2', author: second_user)
+
+# Payment
+
+payment1 = Payment.create!(name: 'Udemy NextJs Course', amount: 29.9, author: first_user)
+payment2 = Payment.create!(name: 'Udemy Rails Course', amount: 19.9, author: first_user)
+second_categ.payments << payment1
+second_categ.payments << payment2
+
+payment3 = Payment.create!(name: "Dog's bed", amount: 15, author: second_user)
+third_categ.payments << payment3
+
