@@ -1,16 +1,18 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <% @category_totals.each do |category| %>
-  <div class="col">
-    <div class="card h-200">
-      <img src=<%= category[:icon] %> class="card-img-top" alt=<%= category[:name] %>> 
-      <div class="card-body">
-        <h5 class="card-title"><%= category[:name] %></h5>
+    <%= link_to user_category_path(@current_user, category[:id] ), class:"no-style-link2" do %>
+        <div class="col">
+        <div class="card h-200">
+          <img src=<%= category[:icon] %> class="card-img-top" alt=<%= category[:name] %>> 
+          <div class="card-body">
+            <h5 class="card-title"><%= category[:name] %></h5>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Total Amount:<%= category[:total] %>$</h5>
+          </div>
+        </div>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Total Amount:<%= category[:total] %>$</h5>
-      </div>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 </div>
 <div>

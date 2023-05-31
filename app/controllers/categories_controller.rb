@@ -5,8 +5,12 @@ class CategoriesController < ApplicationController
     @category_totals = @categories.map do |category|
       payments = category.payments
       total = payments.sum(:amount)
-      { name: category.name, icon: category.icon, total: }
+      { name: category.name, icon: category.icon, id: category.id, total: }
     end
+  end
+
+  def show
+    @category
   end
 
   def new
