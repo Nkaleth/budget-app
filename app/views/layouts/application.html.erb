@@ -12,8 +12,8 @@
   </head>
 
   <body>
-    <% unless current_page?(controller: 'pages', action: 'home') %>
-    <%= render "layouts/navbar" %>
+    <% unless current_page?(root_path) || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
+      <%= render "layouts/navbar" %>
     <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
