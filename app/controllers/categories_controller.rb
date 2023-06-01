@@ -10,7 +10,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category
+    @total_payments_amount = @category.total_payments_amount
+    @ordered_payments = @category.payments_ordered_by_most_recent
   end
 
   def new
