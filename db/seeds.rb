@@ -7,14 +7,14 @@ third_user = User.create!(name: 'Luis', user_avatar: 'https://drive.google.com/u
 
 # Tom's Categories
 
-first_categ = Category.create!(name: 'Food', icon: 'https://drive.google.com/uc?id=1tvEXRtI0n2mRIyHO6jWTr01CNIFQaHER', author: first_user)
-second_categ = Category.create!(name: 'Education', icon: 'https://drive.google.com/uc?id=1Igv3yU_4o3ry6HQzsN6GXhGivGcJ3nrt', author: first_user)
-third_categ = Category.create!(name: 'Pet', icon: 'https://drive.google.com/uc?id=13FSBgZOX3uR-CKxz89Rrhu67OcawWgQ5', author: first_user)
-fourth_categ = Category.create!(name: 'Health', icon: 'https://drive.google.com/uc?id=1fwwSWOnnOMKvypxTeqWw6pbl-S7SP4J0', author: first_user)
+first_categ = Category.create!(name: 'Food', icon: 'https://img.icons8.com/color/512/kawaii-taco', author: first_user)
+second_categ = Category.create!(name: 'Education', icon: 'https://img.icons8.com/office/512/knowledge-sharing', author: first_user)
+third_categ = Category.create!(name: 'Pet', icon: 'https://img.icons8.com/color/512/cat-caregivers', author: first_user)
+fourth_categ = Category.create!(name: 'Health', icon: 'https://img.icons8.com/office/512/caduceus', author: first_user)
 
 # Lilly Categories
 
-sixth_categ = Category.create!(name: 'Entertainment', icon: 'https://drive.google.com/uc?id=1hDAfXduhiyHl1Wa3jJMXoO5pAm2y25N2', author: second_user)
+sixth_categ = Category.create!(name: 'Entertainment', icon: 'https://img.icons8.com/color/512/joystick', author: second_user)
 
 # Payment
 
