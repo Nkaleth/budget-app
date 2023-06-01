@@ -10,6 +10,10 @@ class User < ApplicationRecord
   validates :role, presence: true, inclusion: { in: %w[admin editor author] }
   after_initialize :set_default_role, if: :new_record?
 
+  def author?
+    role == 'author'
+  end
+
   private
 
   def set_default_role

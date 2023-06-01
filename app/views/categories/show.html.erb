@@ -1,0 +1,11 @@
+<h1><%= @category.name %> </h1>
+<h1>Total amount: <%= @total_payments_amount%> </h1>
+<h1>Transactions</h1>
+<% @ordered_payments.each do |payment| %>
+  <h1><%=payment.name %> </h1>
+  <h1><%=payment.amount %> </h1>
+  <h1><%=payment.created_at %> </h1>
+<% end %>
+<div>
+    <%= link_to "add a new transaction", new_user_category_payment_path(@current_user, @category, @payment), class: "btn btn-success w-100" %>
+</div>
