@@ -1,11 +1,7 @@
 .bg-custom {
   background-color: #3778c2;
 }
-
 .no-style-link2 {
   all: unset;
-  width: 100%;
-  display: flex;
-  justify-content: center;
   cursor: pointer;
 }
