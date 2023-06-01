@@ -23,6 +23,6 @@ payment2 = Payment.create!(name: 'Udemy Rails Course', amount: 19.9, author: fir
 second_categ.payments << payment1
 second_categ.payments << payment2
 
-payment3 = Payment.create!(name: "Dog's bed", amount: 15, author: second_user)
-third_categ.payments << payment3
+payment3 = Payment.create!(name: "Watch Movie", amount: 15, author: second_user)
+sixth_categ.payments << payment3
 

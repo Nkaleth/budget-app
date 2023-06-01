@@ -1,0 +1,6 @@
+<h1>Transactions</h1>
+<% @payments.each do |payment| %>
+  <h1><%=payment.name %> </h1>
+  <h1><%=payment.amount %> </h1>
+  <h1><%=payment.created_at %> </h1>
+<% end %>
