@@ -2,14 +2,41 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'associations' do
-    it { should have_many(:payments).with_foreign_key(:author_id).dependent(:destroy) }
-    it { should have_many(:categories).with_foreign_key(:author_id).dependent(:destroy) }
+    it 'has many payments' do
+      association = described_class.reflect_on_association(:payments)
+      expect(association.macro).to eq(:has_many)
+      expect(association.options[:foreign_key]).to eq(:author_id)
+      expect(association.options[:dependent]).to eq(:destroy)
+    end
+
+    it 'has many categories' do
+      association = described_class.reflect_on_association(:categories)
+      expect(association.macro).to eq(:has_many)
+      expect(association.options[:foreign_key]).to eq(:author_id)
+      expect(association.options[:dependent]).to eq(:destroy)
+    end
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:role) }
-    it { should validate_inclusion_of(:role).in_array(%w[admin editor author]) }
+    subject { User.new(name: 'Test', role: 'author') }
+
+    it 'validates presence of name' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+      expect(subject.errors[:name]).to include("can't be blank")
+    end
+
+    it 'validates presence of role' do
+      subject.role = nil
+      expect(subject).to_not be_valid
+      expect(subject.errors[:role]).to include("can't be blank")
+    end
+
+    it 'validates inclusion of role in array' do
+      subject.role = 'invalid'
+      expect(subject).to_not be_valid
+      expect(subject.errors[:role]).to include('is not included in the list')
+    end
   end
 
   describe '#author?' do
