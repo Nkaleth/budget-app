@@ -65,6 +65,9 @@
 - **Use database migration files to maintain database schema.**
 - **Build a webapp that requires the user to log in.**
 - **Use devise gem for authentication.**
+- **Use cancancan gem for authorization.**
+- **Follow wireframe for design.**
+- **Deploy the app**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,7 +75,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming Soon](https://google.com)
+- [Live Version](https://finance-friend.fly.dev/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +139,7 @@ To run the project, execute the following command:
 
 > Describe 1 - 3 features you will add to the project.
 
-- **Deployment**
+- **Complete Desktop Version**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
