@@ -1,4 +1,4 @@
-<h1 class="bold-text mt-4">New Category for <%=@current_user&.name%></h1>
+<h1 class="bold-text mt-4 text-center">New Category for <%=@current_user&.name%></h1>
 <%= form_with model: [@current_user, @category], html: { class: 'form-horizontal p-5 w-100' } do |form| %>
   <div class="form-group">
     <%= form.label :name, class: 'control-label col-sm-2 bold-text' %>

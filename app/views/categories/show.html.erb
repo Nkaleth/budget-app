@@ -1,4 +1,4 @@
-<h1><%= @category.name %>'s Transactions</h1>
+<h1 class="bold-text mt-4 text-center"><%= @category.name %>'s Transactions</h1>
 <img src=<%= @category.icon %> class="card-img-top" alt=<%= @category.name %> style="width: 70px; height: 70px;">
 <div class="container-fluid bg-section custom-height">
   <% @ordered_payments.each do |payment| %>
