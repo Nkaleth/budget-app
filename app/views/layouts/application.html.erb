@@ -13,7 +13,9 @@
 
   <body class="text-color">
     <% unless current_page?(root_path) || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'new') %>
-      <%= render "layouts/navbar" %>
+      <% if current_user %>
+        <%= render 'layouts/navbar' %>
+      <% end %>
     <% end %>
     <% if notice.present? %>
       <p class="notice"><%= notice %></p>
