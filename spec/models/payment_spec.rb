@@ -22,7 +22,7 @@ RSpec.describe Payment, type: :model do
 
   describe 'validations' do
     let(:author) { User.create(name: 'Test', email: 'test@example.com', password: 'password') }
-    subject { Payment.new(name: 'Test', amount: 10, author: author) }
+    subject { Payment.new(name: 'Test', amount: 10, author:) }
 
     it 'validates presence of name' do
       subject.name = nil
