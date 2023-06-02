@@ -40,7 +40,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '#author?' do
-    let(:user) { User.new(role: role) }
+    let(:user) { User.new(role:) }
 
     context 'when the user is an author' do
       let(:role) { 'author' }
