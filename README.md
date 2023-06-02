@@ -167,7 +167,7 @@ If you like this project feel free to fork it and use it as you need and don't f
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Gregoire Vella for the design.
+I would like to thank [Gregoire Vella](https://www.loom.com/share/f709065456fe47d99adc66c34aaea9f5) for the idea of the design.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
