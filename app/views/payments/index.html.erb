@@ -1,0 +1,23 @@
+<h1>All Transactions</h1>
+<div class="container-fluid bg-section custom-height">
+  <% @payments.each do |payment| %>
+      <article class="d-flex justify-content-between bg-white mt-2 p-2" >
+        <section class="d-flex w-50" > 
+          <div class="d-flex justify-content-center align-items-center ms-1 w-50">
+            <h5 class="card-title text-color little-text bold-text"><%=payment.name %></h5>
+          </div>
+          <div class="d-flex justify-content-center align-items-center">
+             <h5 class="card-title text-color little-text"><%= payment.created_at.strftime('%d %b %Y at %l:%M%P') %></h5>
+          </div>
+        </section>
+         <div class="d-flex justify-content-center align-items-center w-25">
+          <% payment.categories.each do |category| %>
+            <p class="card-text text-color little-text">Categories: <%=category.name %></p>
+          <% end %>
+        </div> 
+        <div class="d-flex justify-content-center align-items-center">
+          <p class="card-text bold-text"><%=payment.amount %> $</p>
+        </div>    
+      </article>
+  <% end %>
+</div>

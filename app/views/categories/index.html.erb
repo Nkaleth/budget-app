@@ -1,0 +1,20 @@
+<div class="container-fluid bg-section custom-height">
+  <% @category_totals.each do |category| %>
+    <%= link_to user_category_path(@current_user, category[:id] ), class:"no-style-link2" do %>
+      <article class="d-flex justify-content-between bg-white mt-2 p-3" >
+        <section class="d-flex"> 
+          <img src=<%= category[:icon] %> class="card-img-top" alt=<%= category[:name] %> style="width: 70px; height: 70px;">
+          <div class="d-flex justify-content-center align-items-center ms-3 ">
+            <h5 class="card-title text-color"><%= category[:name] %></h5>
+          </div>
+        </section>
+        <div class="d-flex justify-content-center align-items-center">
+          <p class="card-text bold-text"><%= category[:total] %>$</p>
+        </div>    
+      </article>      
+    <% end %>
+  <% end %>
+</div>
+<div class="w-100 fixed-bottom">
+    <%= link_to "ADD A NEW CATEGORY", new_user_category_path(@current_user), class: "btn btn-success w-100" %>
+</div>
