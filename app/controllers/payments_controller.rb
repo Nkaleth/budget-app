@@ -13,8 +13,12 @@ class PaymentsController < ApplicationController
   def create
     @payment = Payment.new(payment_params.merge(author: current_user))
     if @payment.save
-      @categories = Category.where(id: params[:payment][:category_ids]).where.not(id: params[:category_id])
-      @payment.categories << @categories
+      @category = Category.find(params[:category_id])
+      @categories = Category.where(id: params[:payment][:category_ids]).where.not(id: @category.id)
+      @payment.categories << @category unless @payment.categories.include?(@category)
+      @categories.each do |category|
+        @payment.categories << category unless @payment.categories.include?(category)
+      end
       redirect_to user_categories_path
     else
       render :new
