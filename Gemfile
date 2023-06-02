@@ -76,3 +76,5 @@ gem 'cssbundling-rails'
 gem 'devise'
 gem 'jsbundling-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'dockerfile-rails', '>= 1.4', group: :development
