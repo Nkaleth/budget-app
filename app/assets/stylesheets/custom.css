@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-color {
+  color: #434b54;
+}
+
+.bold-text {
+  font-weight: 700;
+}
 
 .home-text {
   font-family: 'Pacifico', cursive;
   font-weight: 400;
   font-size: 6vh;
 }
+
 .bg-custom {
   background-color: #3778c2;
+}
+
+.bg-section {
+  background-color: #e9ecef;
 }
 
 .no-style-link2 {
@@ -14,4 +32,10 @@
   cursor: pointer;
 }
 
+.custom-height {
+  height: 90vh;
+}
 
+.space-between {
+  justify-content: space-between;
+}
