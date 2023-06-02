@@ -9,6 +9,10 @@ body {
   color: #434b54;
 }
 
+.little-text {
+  font-size: 2vh;
+}
+
 .bold-text {
   font-weight: 700;
 }
