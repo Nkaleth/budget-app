@@ -1,33 +1,30 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= render "layouts/sessions_navbar", title: "REGISTER", subtitle: "Next" %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'w-100 mt-3' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :full_name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+  <div class="input-group mb-0 w-100">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: 'form-control', placeholder: 'Full Name', aria: { label: 'Full Name' } %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="input-group mb-3">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email', aria: { label: 'Email' } %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="input-group mb-0 d-flex flex-column">
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <div class="input-group mb-0 w-100">
+      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Password', aria: { label: 'Password' } %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="input-group mb-3">
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Password Confirmation', aria: { label: 'Password' } %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions d-flex justify-content-center align-items-center mb-3">
+    <%= f.submit "Sign Up", class: 'btn btn-primary bg-custom' %>
   </div>
 <% end %>
 
