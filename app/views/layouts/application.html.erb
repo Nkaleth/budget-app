@@ -17,12 +17,6 @@
         <%= render 'layouts/navbar' %>
       <% end %>
     <% end %>
-    <% if notice.present? %>
-      <p class="notice"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p class="alert"><%= alert %></p>
-    <% end %>
     <div class="d-flex flex-column justify-content-center align-items-center">
       <%= yield %>
     </div>
