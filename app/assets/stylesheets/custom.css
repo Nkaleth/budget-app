@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.home-text {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-size: 6vh;
+}
 .bg-custom {
   background-color: #3778c2;
 }
@@ -6,3 +13,5 @@
   all: unset;
   cursor: pointer;
 }
+
+
