@@ -1,16 +1,16 @@
-<h1>New Category for <%=@current_user&.name%></h1>
-<%= form_with model: [@current_user, @category], html: { class: 'form-horizontal p-5 w-50' } do |form| %>
+<h1 class="bold-text mt-4">New Category for <%=@current_user&.name%></h1>
+<%= form_with model: [@current_user, @category], html: { class: 'form-horizontal p-5 w-100' } do |form| %>
   <div class="form-group">
-    <%= form.label :name, class: 'control-label col-sm-2' %>
+    <%= form.label :name, class: 'control-label col-sm-2 bold-text' %>
     <div class="col-sm-10">
       <%= form.text_field :name, class: 'form-control' %>
     </div>
   </div>
   <div class="form-group">
-    <%= form.label :icon, class: 'control-label col-sm-2' %>
+    <%= form.label :icon, class: 'control-label col-sm-2 bold-text' %>
     <div class="col-sm-10">
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="iconDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle bg-custom" type="button" id="iconDropdown" data-bs-toggle="dropdown" aria-expanded="false">
           Choose an icon
         </button>
         <ul class="dropdown-menu" aria-labelledby="iconDropdown">
@@ -30,6 +30,7 @@
       </div>
       <%= form.hidden_field :icon %>
       <img id="icon-preview" src="https://img.icons8.com/office/512/double-tap-gesture" class="mt-3" style="width: 50px; height: 50px;">
+      <input type="text" id="custom-icon-url" placeholder="Or enter a custom icon URL here" class="form-control mt-3 little-text mb-2">
     </div>
   </div>
 
@@ -37,6 +38,7 @@
     var iconDropdown = document.getElementById('iconDropdown');
     var iconField = document.querySelector('[name="category[icon]"]');
     var iconPreview = document.getElementById('icon-preview');
+    var customIconUrl = document.getElementById('custom-icon-url');
 
     document.querySelectorAll('.dropdown-item').forEach(function(item) {
       item.addEventListener('click', function(event) {
@@ -47,11 +49,18 @@
         iconDropdown.textContent = event.target.textContent;
       });
     });
+
+    customIconUrl.addEventListener('input', function(event) {
+      var iconUrl = event.target.value;
+      iconField.value = iconUrl;
+      iconPreview.src = iconUrl;
+      iconDropdown.textContent = 'Custom';
+    });
   </script>
 
-  <div class="form-group">
+  <div class="actions d-flex justify-content-center align-items-center mb-3">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= form.submit "New", class: 'btn btn-primary mt-4' %>
+      <%= form.submit "New", class: 'btn btn-primary bg-custom' %>
     </div>
   </div>
 <% end %>
