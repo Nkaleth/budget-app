@@ -105,7 +105,7 @@ Clone this repository to your desired folder:
   npm install
 ```
 ```sh
-  rails css:install:bootstrap
+  rails assets:precompile
 ```
 
 ### Usage
